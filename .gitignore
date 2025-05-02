@@ -17,10 +17,6 @@ yarn-debug.log*
 yarn-error.log*
 *.log
 
-# Data and Models
-backend/datasets/
-backend/models/
-
 # OS generated files
 .DS_Store
 Thumbs.db
