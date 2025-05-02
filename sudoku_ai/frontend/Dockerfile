@@ -1,24 +1,20 @@
-FROM node:18-alpine
+FROM node:18-alpine as build
 
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install dependencies
+# Copy package files and install dependencies
+COPY package.json package-lock.json* ./
 RUN npm install
 
-# Copy the application
+# Copy the rest of the application and build
 COPY . .
-
-# Build the application
 RUN npm run build
 
-# Install serve to run the application
-RUN npm install -g serve
+# Production environment
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose the port
-EXPOSE 3000
+EXPOSE 80
 
-# Command to run the application
-CMD ["serve", "-s", "build", "-l", "3000"]
+CMD ["nginx", "-g", "daemon off;"]

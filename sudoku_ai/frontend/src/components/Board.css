@@ -1,0 +1,76 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #333;
+    width: min-content;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Bold borders for 3x3 boxes (for 9x9 grid) */
+  .cell:nth-child(3n) {
+    border-right: 2px solid #333;
+  }
+  
+  .row:nth-child(3n) .cell {
+    border-bottom: 2px solid #333;
+  }
+  
+  /* Remove extra borders */
+  .cell:last-child {
+    border-right: none;
+  }
+  
+  .row:last-child .cell {
+    border-bottom: none;
+  }
+  
+  /* Styling for different cell types */
+  .cell.initial {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .cell.filled {
+    color: #4CAF50;
+  }
+  
+  .cell.highlight {
+    background-color: #ffeb3b;
+  }
+  
+  .cell.error {
+    background-color: #ffcdd2;
+  }
+  
+  /* Remove input styling */
+  .cell {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 500px) {
+    .cell {
+      width: 35px;
+      height: 35px;
+      font-size: 18px;
+    }
+  }

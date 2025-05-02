@@ -2,28 +2,36 @@ version: '3.8'
 
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+    container_name: sudoku-backend
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
-      - ./data:/app/data
     environment:
       - PYTHONUNBUFFERED=1
-    command: uvicorn app.main:app --host 0.0.0.0 --reload
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+    restart: unless-stopped
+    networks:
+      - sudoku-network
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+    container_name: sudoku-frontend
     ports:
-      - "3000:3000"
-    environment:
-      - REACT_APP_API_URL=http://localhost:8000
+      - "3000:80"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     depends_on:
       - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    restart: unless-stopped
+    networks:
+      - sudoku-network
+
+networks:
+  sudoku-network:
+    driver: bridge

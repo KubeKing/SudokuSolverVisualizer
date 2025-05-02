@@ -1,50 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom animations */
-@keyframes pulse-delay {
-  0%, 100% {
-    opacity: 1;
+body {
+    margin: 0;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f7f9;
+    color: #333;
   }
-  50% {
-    opacity: 0.5;
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
   }
-}
-
-.animate-pulse-delay-200 {
-  animation: pulse-delay 1.5s ease-in-out 0.2s infinite;
-}
-
-.animate-pulse-delay-400 {
-  animation: pulse-delay 1.5s ease-in-out 0.4s infinite;
-}
-
-/* Custom styles for Sudoku board */
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 8px;
-  border-radius: 4px;
-  background: #e5e7eb;
-  outline: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #3b82f6;
-  cursor: pointer;
-}
-
-input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #3b82f6;
-  cursor: pointer;
-  border: none;
-}
+  
+  /* Reset some default browser styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  input:focus, button:focus {
+    outline: 2px solid #4CAF50;
+  }
