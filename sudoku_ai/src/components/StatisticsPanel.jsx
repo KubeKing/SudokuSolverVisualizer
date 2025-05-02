@@ -1,5 +1,4 @@
 import React from 'react';
-import './StatisticsPanel.css';
 
 const StatisticsPanel = ({ statistics = {} }) => {
   const {

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Visualizer.css';
 import Board from './Board';
 
 const Visualizer = ({

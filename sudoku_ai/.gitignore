@@ -24,3 +24,23 @@ backend/models/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Next.js
+.next/
+out/
+.vercel/
+next-env.d.ts
+
+# Environment Variables
+.env*.local
+
+# Testing
+coverage/
+
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map

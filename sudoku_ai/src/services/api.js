@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL for API
-const API_URL = process.env.REACT_APP_API_URL || '/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 // Create an axios instance
 const api = axios.create({
@@ -52,7 +52,7 @@ export const solvePuzzle = async (grid, size = 9) => {
  */
 export const visualizeSolution = async (grid, size = 9) => {
   try {
-    const response = await api.post('/solve/visualize', { grid, size });
+    const response = await api.post('/visualize', { grid, size });
     return response.data;
   } catch (error) {
     console.error('Error visualizing solution:', error);

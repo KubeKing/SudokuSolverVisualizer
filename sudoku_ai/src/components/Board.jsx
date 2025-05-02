@@ -1,5 +1,4 @@
 import React from 'react';
-import './Board.css';
 
 const Board = ({ grid, initialGrid, onCellChange, readOnly }) => {
   const size = grid.length;

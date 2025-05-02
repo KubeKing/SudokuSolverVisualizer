@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import Board from './components/Board';
 import Visualizer from './components/Visualizer';
 import InstructionsPanel from './components/InstructionsPanel';

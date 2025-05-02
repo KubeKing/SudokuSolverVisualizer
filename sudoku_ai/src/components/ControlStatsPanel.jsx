@@ -1,5 +1,4 @@
 import React from 'react';
-import './ControlStatsPanel.css';
 
 const ControlStatsPanel = ({
   statistics = {},
