@@ -1,0 +1,9 @@
+{
+  "short_name": "Sudoku AI",
+  "name": "Sudoku AI - Play and Learn with AI algorithms",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
